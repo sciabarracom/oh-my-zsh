@@ -1,8 +1,15 @@
 vz() {
-  f=$ZSH/custom/${1:-misc.zsh}
+  f=$ZSH/custom/${1:-misc}.zsh
   vi $f
-  yes | cp -f $f ~/Dropbox/Work/Common/Zsh
+  yes | cp -f $f ~/Dropbox/Work/Common/Zsh 2>/dev/null >/dev/null
   source ~/.zshrc 
+}
+
+svd() {
+   f=${1:?dirname}
+   echo "$f=$PWD" >>$ZSH/custom/namedir.zsh
+   source $ZSH/custom/namedir.zsh
+   cd ~$f
 }
 
 
