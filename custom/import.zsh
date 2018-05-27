@@ -20,5 +20,9 @@ fi
 if test -e /usr/local/go
 then export GOROOT=/usr/local/go
 fi
+if test -e /usr/lib/go-1.10
+then export GOROOT=/usr/lib/go-1.10
+     path+=/usr/lib/go-1.10/bin
+fi
 export GOPATH=~/go
 
