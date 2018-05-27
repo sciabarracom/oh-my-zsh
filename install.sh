@@ -93,15 +93,9 @@ main() {
   echo '                        /____/                       ....is now installed!'
   echo ''
   echo ''
-  echo 'Please look over the ~/.zshrc file to select plugins, themes, and options.'
-  echo ''
-  echo 'p.s. Follow us at https://twitter.com/ohmyzsh.'
-  echo ''
-  echo 'p.p.s. Get stickers and t-shirts at https://shop.planetargon.com.'
-  echo ''
+  echo 'Remember to chsh if you want it by default'
   printf "${NORMAL}"
   env zsh
 }
 
 main
-source ~/.zshrc
