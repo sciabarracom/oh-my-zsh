@@ -69,13 +69,13 @@ alias agk="ag --kotlin"
 alias agg="ag --go"
 
 # git
-function gca {
- git commit -m "$*" -a
-}
-alias gst="git status"
-alias gad="git add"
-alias gpo="git push origin"
-alias gbr="git branch -a"
+#function gca {
+# git commit -m "$*" -a
+#}
+#alias gst="git status"
+#alias gad="git add"
+#alias gpo="git push origin"
+#alias gbr="git branch -a"
 
 
 alias svi="sudo vi"
