@@ -16,12 +16,7 @@ svd() {
 # general 
 
 alias f=find
-alias l=ls
-
-alias u="cd .. ; ls"
-alias uu="cd ../.. ; ls"
-alias g=grep
-alias ll="ls -l"
+alias s= source
 
 alias a1="awk '{print \$1}'"
 alias a2="awk '{print \$2}'"
@@ -33,12 +28,6 @@ alias a7="awk '{print \$7}'"
 alias a8="awk '{print \$8}'"
 alias a9="awk '{print \$9}'"
 
-function c {
- cd $(ls -d * ~/* | grep $1 | head -1)
- echo ">>>"$(pwd)"<<<"
- ls -l
- echo ">>>"$(pwd)"<<<"
-}
 
 
 # docker 
