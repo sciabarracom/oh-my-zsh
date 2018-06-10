@@ -1,7 +1,9 @@
 vz() {
   f=$ZSH/custom/${1:-misc}.zsh
   vi $f
-  yes | cp -f $f ~/Dropbox/Work/Common/Zsh 2>/dev/null >/dev/null
+  pushd ~ZSH
+  git commit -m $f -a
+  git push origin master
   source ~/.zshrc 
 }
 
@@ -74,7 +76,6 @@ alias alex="say -v Alex"
 alias eng="say -v Alex"
 
 export ANSIBLE_NOCOWS=1
-
 
 alias ans=ansible-playbook
 
