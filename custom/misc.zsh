@@ -80,7 +80,7 @@ export ANSIBLE_NOCOWS=1
 alias ans=ansible-playbook
 
 
-function crammer {
+crammer() {
   export T=$PWD
   while read -p "cram> " line
   do eval ${line#$}
