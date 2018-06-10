@@ -82,7 +82,7 @@ alias ans=ansible-playbook
 
 crammer() {
   export T=$PWD
-  while read -p "cram> " line
+  while read "line?cram> " 
   do eval ${line#$}
   done
 }
