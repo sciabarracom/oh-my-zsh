@@ -71,6 +71,7 @@ alias agg="ag --go"
 
 alias svi="sudo vi"
 alias kc=kubectl
+alias -g NKS="--namespace kube-system"
 
 alias alex="say -v Alex"
 alias eng="say -v Alex"
