@@ -68,6 +68,8 @@ plugins=(
   systemd
   web-search
   wd
+  aws
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
