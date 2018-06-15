@@ -4,6 +4,7 @@ function jh {
  export JAVA_HOME=$(/usr/libexec/java_home -version $1)
  path+=$JAVA_HOME/bin
 }
+
 if test -e /usr/libexec/java_home
 then jh 1.8
 fi
@@ -16,6 +17,7 @@ fi
 if test -d ~/Library/Python/2.7/bin
 then path+=~/Library/Python/2.7/bin
 fi
+
 
 if test -e /usr/local/go
 then export GOROOT=/usr/local/go
