@@ -1,7 +1,9 @@
 vz() {
   f=$ZSH/custom/${1:-misc}.zsh
   vi $f
-  yes | cp -f $f ~/Dropbox/Work/Common/Zsh 2>/dev/null >/dev/null
+  pushd ~ZSH
+  git commit -m $f -a
+  git push origin master
   source ~/.zshrc 
 }
 
@@ -16,12 +18,7 @@ svd() {
 # general 
 
 alias f=find
-alias l=ls
-
-alias u="cd .. ; ls"
-alias uu="cd ../.. ; ls"
-alias g=grep
-alias ll="ls -l"
+alias s= source
 
 alias a1="awk '{print \$1}'"
 alias a2="awk '{print \$2}'"
@@ -33,12 +30,6 @@ alias a7="awk '{print \$7}'"
 alias a8="awk '{print \$8}'"
 alias a9="awk '{print \$9}'"
 
-function c {
- cd $(ls -d * ~/* | grep $1 | head -1)
- echo ">>>"$(pwd)"<<<"
- ls -l
- echo ">>>"$(pwd)"<<<"
-}
 
 
 # docker 
@@ -80,19 +71,19 @@ alias agg="ag --go"
 
 alias svi="sudo vi"
 alias kc=kubectl
+alias -g NKS="--namespace kube-system"
 
 alias alex="say -v Alex"
 alias eng="say -v Alex"
 
 export ANSIBLE_NOCOWS=1
 
-
 alias ans=ansible-playbook
 
 
-function crammer {
+crammer() {
   export T=$PWD
-  while read -p "cram> " line
+  while read "line?cram> " 
   do eval ${line#$}
   done
 }
