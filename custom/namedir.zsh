@@ -5,3 +5,4 @@ OW=/Users/msciab/Work/OpenWhisk
 AP=/home/msciab/go/src/github.com/apache
 SC=/home/msciab/go/src/github.com/sciabarracom
 PA=/home/sciam/Work/parthenon
+INTRO=/Users/msciab/blog/source/_posts/kubernetes
