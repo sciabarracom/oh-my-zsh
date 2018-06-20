@@ -92,4 +92,5 @@ crammer() {
 kfg() {
  export KUBECONFIG=$HOME/.kube/$1.fpprod.corp.config
  kubectl get nodes
+ export PATH=$HOME/.kube/bin:$PATH
 }
