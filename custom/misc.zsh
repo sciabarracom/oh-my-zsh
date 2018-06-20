@@ -90,6 +90,6 @@ crammer() {
 
 
 kfg() {
- export KUBECONFIG=$HOME/.kube/$1.fpprod.corp
+ export KUBECONFIG=$HOME/.kube/$1.fpprod.corp.config
  kubectl get nodes
 }
