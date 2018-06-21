@@ -35,6 +35,7 @@ alias a9="awk '{print \$9}'"
 # docker 
 alias dk=docker
 alias dki="docker images"
+alias dkr="docker run -ti"
 
 function dke {
   x=$(docker ps | grep $1 | awk '{ print $1 }')
