@@ -1,6 +1,8 @@
+IORG=/home/msciab/go/src/github.com/apache/incubator-openwhisk-runtime-go
 TLM=/Users/msciab/Work/Telmore/2018
 GOTUT=/Users/msciab/Work/OpenWhisk/openwhisk-runtime-go-tutorial
+OW=/Users/msciab/Work/OpenWhisk
 AP=/home/msciab/go/src/github.com/apache
 SC=/home/msciab/go/src/github.com/sciabarracom
-IORG=/home/msciab/go/src/github.com/apache/incubator-openwhisk-runtime-go
 PA=/home/sciam/Work/parthenon
+INTRO=/Users/msciab/blog/source/_posts/kubernetes
