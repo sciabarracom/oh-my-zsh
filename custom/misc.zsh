@@ -40,7 +40,12 @@ alias dkr="docker run -ti"
 
 alias kc=kubectl
 alias -g NKS="--namespace kube-system"
+
 kcns() { kubectl config set-context $(kubectl config current-context)  --namespace=$1 }
+
+hinst() { helm upgrade --install $1 --namespace $1 ./$1  }
+
+hdebug() { helm upgrade --install $1 --namespace $1 ./$1 --dry-run --debug  }
 
 function dkclean {
   docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi -f
