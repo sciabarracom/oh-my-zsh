@@ -31,23 +31,13 @@ alias a8="awk '{print \$8}'"
 alias a9="awk '{print \$9}'"
 
 
-
 # docker 
 alias dk=docker
 alias dki="docker images"
 alias dkr="docker run -ti"
 
-function dke {
-  x=$(docker ps | grep $1 | awk '{ print $1 }')
-  docker exec -ti $x /bin/sh
-}
-
-function dksh {
-  x=$(docker images | grep $1 | head -1 | awk '{ print $3 }')
-  echo $x
-  shift
-  docker run -ti -u=0 "$@" --entrypoint=/bin/sh $x
-}
+alias kc=kubectl
+alias -g NKS="--namespace kube-system"
 
 function dkclean {
   docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi -f
@@ -60,27 +50,13 @@ alias agj="ag --java"
 alias agk="ag --kotlin"
 alias agg="ag --go"
 
-# git
-#function gca {
-# git commit -m "$*" -a
-#}
-#alias gst="git status"
-#alias gad="git add"
-#alias gpo="git push origin"
-#alias gbr="git branch -a"
-
 
 alias svi="sudo vi"
-alias kc=kubectl
-alias -g NKS="--namespace kube-system"
-
 alias alex="say -v Alex"
 alias eng="say -v Alex"
 
 export ANSIBLE_NOCOWS=1
-
 alias ans=ansible-playbook
-
 
 crammer() {
   export T=$PWD
@@ -88,7 +64,6 @@ crammer() {
   do eval ${line#$}
   done
 }
-
 
 kfg() {
  export KUBECONFIG=$HOME/.kube/$1.fpprod.corp.config
