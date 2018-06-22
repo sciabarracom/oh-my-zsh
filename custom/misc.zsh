@@ -2,9 +2,6 @@ vz() {
   f=$ZSH/custom/${1:-misc}.zsh
   vi $f
   source ~/.zshrc 
-  #pushd ~ZSH
-  #git commit -m $f -a
-  #git push origin master
 }
 
 svd() {
@@ -14,6 +11,12 @@ svd() {
    cd ~$f
 }
 
+ohgit {
+  pushd ~ZSH
+  git commit -m $f -a
+  git push origin master
+  popd
+}
 
 # general 
 
