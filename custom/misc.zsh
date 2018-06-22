@@ -18,7 +18,7 @@ svd() {
 # general 
 
 alias f=find
-alias s= source
+alias s=source
 
 alias a1="awk '{print \$1}'"
 alias a2="awk '{print \$2}'"
@@ -29,7 +29,6 @@ alias a6="awk '{print \$6}'"
 alias a7="awk '{print \$7}'"
 alias a8="awk '{print \$8}'"
 alias a9="awk '{print \$9}'"
-
 
 # docker 
 alias dk=docker
