@@ -37,6 +37,7 @@ alias dkr="docker run -ti"
 
 alias kc=kubectl
 alias -g NKS="--namespace kube-system"
+kcns() { kubectl config set-context $(kubectl config current-context)  --namespace=$1 }
 
 function dkclean {
   docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi -f
