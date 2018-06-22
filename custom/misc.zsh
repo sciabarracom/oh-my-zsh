@@ -11,7 +11,7 @@ svd() {
    cd ~$f
 }
 
-ohgit {
+ohgit() {
   pushd ~ZSH
   git commit -m $f -a
   git push origin master
