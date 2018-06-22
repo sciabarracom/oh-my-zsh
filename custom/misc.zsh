@@ -1,10 +1,10 @@
 vz() {
   f=$ZSH/custom/${1:-misc}.zsh
   vi $f
-  pushd ~ZSH
   source ~/.zshrc 
-  git commit -m $f -a
-  git push origin master
+  #pushd ~ZSH
+  #git commit -m $f -a
+  #git push origin master
 }
 
 svd() {
