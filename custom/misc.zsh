@@ -13,7 +13,7 @@ svd() {
 
 ohgit() {
   pushd ~ZSH
-  git commit -m $f -a
+  git commit -m "saved" -a
   git push origin master
   popd
 }
@@ -41,9 +41,23 @@ alias dkr="docker run -ti"
 alias kc=kubectl
 alias -g NKS="--namespace kube-system"
 
-kcns() { kubectl config set-context $(kubectl config current-context)  --namespace=$1 }
+kcr() {
+ kubectl run ${1/[\/:]/-} -ti --rm --image=$1 --command=${2:-/bin/sh}
+}
 
-hinst() { helm upgrade --install $1 --namespace $1 ./$1  }
+
+kcns() { 
+if test -z "$1"
+then kubectl get ns
+else kubectl create namespake $1 2>/dev/null 
+     kubectl config set-context $(kubectl config current-context)  --namespace=$1 
+fi
+}
+
+hinst() { helm upgrade --install $1 ./$1  }
+
+hpurge() { helm delete $1 --purge  }
+
 
 hdebug() { helm upgrade --install $1 --namespace $1 ./$1 --dry-run --debug  }
 
