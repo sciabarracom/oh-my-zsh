@@ -13,7 +13,7 @@ svd() {
 
 ohgit() {
   pushd ~ZSH
-  git commit -m $f -a
+  git commit -m "saved" -a
   git pull origin master
   git push origin master
   popd
@@ -41,7 +41,27 @@ alias dkr="docker run -ti"
 
 alias kc=kubectl
 alias -g NKS="--namespace kube-system"
-kcns() { kubectl config set-context $(kubectl config current-context)  --namespace=$1 }
+
+kcr() {
+ kubectl run ${1/[\/:]/-} -ti --rm --image=$1 --restart=Never --command ${2:-/bin/sh}
+}
+
+
+kcns() { 
+if test -z "$1"
+then kubectl get ns
+else kubectl create namespace $1 2>/dev/null 
+     kubectl config set-context $(kubectl config current-context)  --namespace=$1 
+fi
+}
+
+hinst() { helm upgrade --install ${1%/} ./$1  }
+
+hpurge() { helm delete ${1%/} --purge  }
+
+hdebug() { helm upgrade --install ${1%/} --namespace $1 ./$1 --dry-run --debug  }
+
+alias hls="helm list"
 
 function dkclean {
   docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi -f
@@ -53,7 +73,6 @@ alias ags="ag --scala"
 alias agj="ag --java"
 alias agk="ag --kotlin"
 alias agg="ag --go"
-
 
 alias svi="sudo vi"
 alias alex="say -v Alex"

@@ -1,9 +1,10 @@
 IORG=/home/msciab/go/src/github.com/apache/incubator-openwhisk-runtime-go
 TLM=/Users/msciab/Work/Telmore/2018
 GOTUT=/Users/msciab/Work/OpenWhisk/openwhisk-runtime-go-tutorial
-OW=/Users/msciab/Work/OpenWhisk
-AP=/home/msciab/go/src/github.com/apache
-SC=/home/msciab/go/src/github.com/sciabarracom
-PA=/home/sciam/Work/parthenon
+OW=~/Work/OpenWhisk
+AP=~/go/src/github.com/apache
+SC=~/go/src/github.com/sciabarracom
+PA=~/Work/parthenon
 INTRO=/Users/msciab/blog/source/_posts/kubernetes
-BOWL=/home/msciab/go/src/github.com/sciabarra/bowl
+BOWL=~/go/src/github.com/sciabarra/bowl
+ASETUP=/Users/msciab/Dropbox/Work/MacBookPro/Telmore/2018/agilesites2-setup
