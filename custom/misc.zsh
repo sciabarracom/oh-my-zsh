@@ -14,6 +14,7 @@ svd() {
 ohgit() {
   pushd ~ZSH
   git commit -m $f -a
+  git pull origin master
   git push origin master
   popd
 }
