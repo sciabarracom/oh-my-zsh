@@ -93,3 +93,4 @@ kfg() {
  kubectl get nodes
  export PATH=$HOME/.kube/bin:$PATH
 }
+rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $R +%M%d%H%M);  touch -t $T $i; done }
