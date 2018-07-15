@@ -19,6 +19,7 @@ ohgit() {
   popd
 }
 
+alias nssh="ssh -o StrictHostKeyChecking=no"
 # general 
 
 alias f=find
