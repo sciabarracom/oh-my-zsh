@@ -24,6 +24,8 @@ alias nssh="ssh -o StrictHostKeyChecking=no"
 
 alias f=find
 alias s=source
+alias m=make
+
 
 alias a1="awk '{print \$1}'"
 alias a2="awk '{print \$2}'"
@@ -39,6 +41,7 @@ alias a9="awk '{print \$9}'"
 alias dk=docker
 alias dki="docker images"
 alias dkr="docker run -ti"
+alias dkc=docker-compose
 
 alias kc=kubectl
 alias -g NKS="--namespace kube-system"
@@ -81,6 +84,8 @@ alias eng="say -v Alex"
 
 export ANSIBLE_NOCOWS=1
 alias ans=ansible-playbook
+anst() { ansible-playbook -t untagged,$1 $argv[2,-1] }
+ansc() { ansible -mcommand -a$1 all }
 
 crammer() {
   export T=$PWD
