@@ -19,7 +19,7 @@ ohgit() {
   popd
 }
 
-alias nssh="ssh -o StrictHostKeyChecking=no"
+alias -g NKH="-o StrictHostKeyChecking=no"
 # general 
 
 alias f=find
@@ -85,7 +85,7 @@ alias eng="say -v Alex"
 export ANSIBLE_NOCOWS=1
 alias ans=ansible-playbook
 anst() { ansible-playbook -t untagged,$1 $argv[2,-1] }
-ansc() { ansible -mcommand -a$1 all }
+ansc() { ansible -mcommand -a$1 $argv[2,-1] all }
 
 crammer() {
   export T=$PWD
@@ -100,3 +100,5 @@ kfg() {
  export PATH=$HOME/.kube/bin:$PATH
 }
 rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $R +%M%d%H%M);  touch -t $T $i; done }
+
+alias wi="wsk -i"
