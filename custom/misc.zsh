@@ -102,3 +102,8 @@ kfg() {
 rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $R +%M%d%H%M);  touch -t $T $i; done }
 
 alias wi="wsk -i"
+
+gqk() {
+ git commit -m "$(date)" -a
+ git push origin master
+}

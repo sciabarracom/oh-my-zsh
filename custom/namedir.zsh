@@ -14,3 +14,7 @@ HAOW=/Users/msciab/Work/Hack/openwhisk
 OWDK=/Users/msciab/Dropbox/Work/MacBookPro/go/src/github.com/apache/incubator-openwhisk-deploy-kube
 HA=/Users/msciab/Work/Hack
 BK=/Users/msciab/book/oreilly
+OR=/Users/msciab/Dropbox/Work/MacBookPro/Book/oreilly
+ORAT=/Users/msciab/Dropbox/Work/MacBookPro/Book/oreilly/atlas
+BKC4CO=/Users/msciab/book/oreilly/github/chapter4-common-pattern
+BKA1AS=/Users/msciab/book/oreilly/atlas/AppendixA
