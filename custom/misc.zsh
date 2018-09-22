@@ -104,7 +104,7 @@ rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $
 
 alias wi="wsk -i"
 
-gqk() {
+gsnap() {
  git commit -m "$(date)" -a
  git push origin master
 }
