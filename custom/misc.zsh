@@ -14,10 +14,12 @@ svd() {
 ohgit() {
   pushd ~ZSH
   git commit -m "saved" -a
+  git pull origin master
   git push origin master
   popd
 }
 
+alias nssh="ssh -o StrictHostKeyChecking=no"
 # general 
 
 alias f=find
@@ -39,9 +41,10 @@ alias dki="docker images"
 alias dkr="docker run -ti"
 
 alias kc=kubectl
-alias -g NKS="--namespace kube-system"
+alias kcg="kubectl get"
+alias -g KS="--namespace kube-system"
 
-kcr() {
+kcrun() {
  kubectl run ${1/[\/:]/-} -ti --rm --image=$1 --restart=Never --command ${2:-/bin/sh}
 }
 
@@ -92,3 +95,4 @@ kfg() {
  kubectl get nodes
  export PATH=$HOME/.kube/bin:$PATH
 }
+rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $R +%M%d%H%M);  touch -t $T $i; done }
