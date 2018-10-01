@@ -19,11 +19,13 @@ ohgit() {
   popd
 }
 
-alias nssh="ssh -o StrictHostKeyChecking=no"
+alias -g NHK="-o StrictHostKeyChecking=no"
 # general 
 
 alias f=find
 alias s=source
+alias m=make
+
 
 alias a1="awk '{print \$1}'"
 alias a2="awk '{print \$2}'"
@@ -39,6 +41,7 @@ alias a9="awk '{print \$9}'"
 alias dk=docker
 alias dki="docker images"
 alias dkr="docker run -ti"
+alias dkc=docker-compose
 
 alias kc=kubectl
 alias kcg="kubectl get"
@@ -82,6 +85,8 @@ alias eng="say -v Alex"
 
 export ANSIBLE_NOCOWS=1
 alias ans=ansible-playbook
+anst() { ansible-playbook -t untagged,$1 $argv[2,-1] }
+ansc() { ansible -mcommand -a$1 $argv[2,-1] all }
 
 crammer() {
   export T=$PWD
@@ -95,4 +100,12 @@ kfg() {
  kubectl get nodes
  export PATH=$HOME/.kube/bin:$PATH
 }
+
 rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $R +%M%d%H%M);  touch -t $T $i; done }
+
+alias wi="wsk -i"
+
+gsnap() {
+ git commit -m "$(date)" -a
+ git push origin master
+}

@@ -27,3 +27,21 @@ function wkclean {
   do echo wsk action delete $a
   done
 }
+
+myip() { ifconfig | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | head -1 }
+
+wskcompose() { 
+  unalias wsk
+  wsk property set --apihost $(myip) --namespace guest --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP -i
+  export WSK="wsk -i"
+  alias wsk="wsk -i"
+}
+
+wskminikube() { 
+  unalias wsk
+  wsk property set --apihost $(minikube ip):31001 -i 
+  wsk property set --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP 
+  export WSK="wsk -i"
+  alias wsk="wsk -i"
+}
+
