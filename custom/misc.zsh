@@ -44,9 +44,10 @@ alias dkr="docker run -ti"
 alias dkc=docker-compose
 
 alias kc=kubectl
-alias -g NKS="--namespace kube-system"
+alias kcg="kubectl get"
+alias -g KS="--namespace kube-system"
 
-kcr() {
+kcrun() {
  kubectl run ${1/[\/:]/-} -ti --rm --image=$1 --restart=Never --command ${2:-/bin/sh}
 }
 

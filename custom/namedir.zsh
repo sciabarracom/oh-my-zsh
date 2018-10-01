@@ -1,6 +1,5 @@
 AP=~/go/src/github.com/apache
-SC=~/go/src/github.com/sciabarracom
-PA=~/Work/parthenon
+BK=~/book/oreilly
 BO=~/go/src/github.com/sciabarra/bowl
 HA=/Users/msciab/Work/Hack
 BK=/Users/msciab/book/oreilly
