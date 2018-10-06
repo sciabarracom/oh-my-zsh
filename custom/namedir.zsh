@@ -1,12 +1,13 @@
 PA=~/Work/parthenon
 BO=~/go/src/github.com/sciabarra/bowl
+AP=~/go/src/github.com/apache
+BK=~/book/oreilly
+BO=~/go/src/github.com/sciabarra/bowl
 TLAS=~/Work/Telmore/2016/agilesites-telmore-ng
 TLMI=~/Work/Telmore/2018/oldcms-migrator/vagrant
 OW=~/go/src/github.com/apache
 OWRG=~/go/src/github.com/apache/incubator-openwhisk-runtime-go
-OWRG=~/go/src/github.com/apache/incubator-openwhisk-runtime-go
-OWRGEX=~/go/src/github.com/apache/incubator-openwhisk-runtime-go_examples
 OWDT=~/go/src/github.com/apache/incubator-openwhisk-devtools
 OWDK=~/go/src/github.com/apache/incubator-openwhisk-deploy-kube
-BK=~/book/oreilly
-OWSU=/home/msciab/go/src/github.com/apache/openwhisk-hack/support
+BKAT=/Users/msciab/book/oreilly/atlas
+BKGH=/Users/msciab/book/oreilly/github

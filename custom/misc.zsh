@@ -19,7 +19,7 @@ ohgit() {
   popd
 }
 
-alias -g NKH="-o StrictHostKeyChecking=no"
+alias -g NHK="-o StrictHostKeyChecking=no"
 # general 
 
 alias f=find
@@ -44,9 +44,10 @@ alias dkr="docker run -ti"
 alias dkc=docker-compose
 
 alias kc=kubectl
-alias -g NKS="--namespace kube-system"
+alias kcg="kubectl get"
+alias -g KS="--namespace kube-system"
 
-kcr() {
+kcrun() {
  kubectl run ${1/[\/:]/-} -ti --rm --image=$1 --restart=Never --command ${2:-/bin/sh}
 }
 
@@ -111,3 +112,9 @@ kfg() {
 rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $R +%M%d%H%M);  touch -t $T $i; done }
 
 alias wi="wsk -i"
+
+gsnap() {
+ M=${1:-$(date)}
+ git commit -m "$M" -a
+ git push origin 
+}
