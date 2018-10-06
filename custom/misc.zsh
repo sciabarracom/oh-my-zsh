@@ -59,6 +59,14 @@ else kubectl create namespace $1 2>/dev/null
 fi
 }
 
+kproxy() {
+ echo "===== Token ===="
+ cat ~/.kube/admin.token
+ echo "==== URL ===="
+ echo "http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login"
+ kubectl proxy
+}
+
 hinst() { helm upgrade --install ${1%/} ./$1  }
 
 hpurge() { helm delete ${1%/} --purge  }
@@ -99,6 +107,7 @@ kfg() {
  kubectl get nodes
  export PATH=$HOME/.kube/bin:$PATH
 }
+
 rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $R +%M%d%H%M);  touch -t $T $i; done }
 
 alias wi="wsk -i"
