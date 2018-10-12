@@ -11,6 +11,9 @@ svd() {
    cd ~$f
 }
 
+here() {
+}
+
 ohgit() {
   pushd ~ZSH
   git commit -m "saved" -a
