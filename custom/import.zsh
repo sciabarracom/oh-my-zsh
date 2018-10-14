@@ -32,4 +32,4 @@ fi
 path=($GOROOT/bin $path)
 export GOPATH=~/go
 export PATH
-
+export ZSH_THEME=jovial

@@ -16,3 +16,4 @@ HERE=/Users/msciab/book/oreilly/atlas/Chapter7/chapter7-python/pyswagger
 HERE=/Users/msciab/Dropbox/Work/MacBookPro/Book/oreilly/atlas/Chapter7/chapter7-python/rest
 HERE=/Users/msciab/Dropbox/Work/MacBookPro/Book/oreilly/atlas/Chapter7/chapter7-python/rest
 OWAR=/Users/msciab/go/src/github.com/apache/incubator-openwhisk-actionloop-runtimes
+OWAR=/Users/msciab/go/src/github.com/apache/incubator-openwhisk-actionloop-runtimes
