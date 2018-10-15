@@ -11,3 +11,5 @@ PA=~/Work/parthenon
 SC=/home/msciab/go/src/github.com/sciabarracom
 TLAS=~/Work/Telmore/2016/agilesites-telmore-ng
 TLMI=~/Work/Telmore/2018/oldcms-migrator/vagrant
+CEPH=/home/sciam/Work/parthenon/rook/cluster/examples/kubernetes/ceph
+ROOKCEPH=/home/sciam/Work/parthenon/rook/cluster/examples/kubernetes/ceph

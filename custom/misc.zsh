@@ -45,6 +45,7 @@ alias dkc=docker-compose
 
 alias kc=kubectl
 alias kcg="kubectl get"
+kpo() { kc get po | awk  "/$1/ { print \"\"\$1}" | tail -1 }
 alias -g KS="--namespace kube-system"
 
 kcrun() {
@@ -55,8 +56,7 @@ kcrun() {
 kcns() { 
 if test -z "$1"
 then kubectl get ns
-else kubectl create namespace $1 2>/dev/null 
-     kubectl config set-context $(kubectl config current-context)  --namespace=$1 
+else kubectl config set-context $(kubectl config current-context)  --namespace=$1 
 fi
 }
 
