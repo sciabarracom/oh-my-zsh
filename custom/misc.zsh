@@ -11,6 +11,9 @@ svd() {
    cd ~$f
 }
 
+here() {
+}
+
 ohgit() {
   pushd ~ZSH
   git commit -m "saved" -a
@@ -60,6 +63,14 @@ else kubectl config set-context $(kubectl config current-context)  --namespace=$
 fi
 }
 
+kproxy() {
+ echo "===== Token ===="
+ cat ~/.kube/admin.token
+ echo "==== URL ===="
+ echo "http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login"
+ kubectl proxy
+}
+
 hinst() { helm upgrade --install ${1%/} ./$1  }
 
 hpurge() { helm delete ${1%/} --purge  }
@@ -106,6 +117,7 @@ rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $
 alias wi="wsk -i"
 
 gsnap() {
- git commit -m "$(date)" -a
- git push origin master
+ M=${1:-$(date)}
+ git commit -m "$M" -a
+ git push origin 
 }
