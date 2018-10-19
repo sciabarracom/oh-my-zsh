@@ -47,18 +47,19 @@ alias dkr="docker run -ti"
 alias dkc=docker-compose
 
 alias kc=kubectl
-alias kcg="kubectl get"
+alias ks="kubectl --namespace kube-system"
+alias kg="kubectl get"
 kpo() { kc get po | awk  "/$1/ { print \"\"\$1}" | tail -1 }
-alias -g KS="--namespace kube-system"
 
-kcrun() {
+krun() {
  kubectl run ${1/[\/:]/-} -ti --rm --image=$1 --restart=Never --command ${2:-/bin/sh}
 }
 
 
 kcns() { 
 if test -z "$1"
-then kubectl get ns
+then  kubectl config get-contexts  
+      kubectl get ns
 else kubectl config set-context $(kubectl config current-context)  --namespace=$1 
 fi
 }
@@ -71,7 +72,7 @@ kproxy() {
  kubectl proxy
 }
 
-hinst() { helm upgrade --install ${1%/} ./$1  }
+hinst() { helm upgrade --install ${1%/} --namespace ${1%/} ./$1  }
 
 hpurge() { helm delete ${1%/} --purge  }
 
