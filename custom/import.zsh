@@ -17,8 +17,8 @@ if test -d ~/Library/Python/2.7/bin
 then path+=~/Library/Python/2.7/bin
 fi
 
-if test -e /usr/local/opt/go/libexec
-then export GOROOT=/usr/local/opt/go/libexec
+if test -e /usr/local/Cellar/go/1.11.1
+then export GOROOT=/usr/local/Cellar/go/1.11.1
 fi
 
 if test -e /usr/lib/go-1.10
