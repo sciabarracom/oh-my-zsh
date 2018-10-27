@@ -58,9 +58,16 @@ kcrun() {
 kcns() { 
 if test -z "$1"
 then kubectl get ns
-else kubectl create namespace $1 2>/dev/null 
-     kubectl config set-context $(kubectl config current-context)  --namespace=$1 
+else kubectl config set-context $(kubectl config current-context)  --namespace=$1 
 fi
+}
+
+kpo() {
+ N=${2:-0}
+ if test -z "$1"
+ then kubectl get po --show-labels | {awk '{print $1 " : " $6}'}
+ else kubectl get po -o jsonpath="{.items[$N].metadata.name}" -l "$1"
+ fi
 }
 
 kproxy() {
