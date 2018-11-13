@@ -1,4 +1,6 @@
-path+=~/bin:/usr/local/bin:~/go/bin
+path+=~/bin
+path+=/usr/local/bin
+path+=~/go/bin
 
 function jh {
  export JAVA_HOME=$(/usr/libexec/java_home -version $1)
@@ -37,3 +39,8 @@ path=($GOROOT/bin $path)
 export GOPATH=~/go
 export PATH
 export ZSH_THEME=jovial
+
+if test -e ~/.nix-profile/etc 
+then source .nix-profile/etc/profile.d/nix.sh
+fi 
+

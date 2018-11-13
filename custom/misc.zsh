@@ -6,12 +6,9 @@ vz() {
 
 svd() {
    f=${1:?dirname}
-   echo "$f=$PWD" >>$ZSH/custom/namedir.zsh
+   echo "$f=\"$PWD\"" >>$ZSH/custom/namedir.zsh
    source $ZSH/custom/namedir.zsh
    cd ~$f
-}
-
-here() {
 }
 
 ohgit() {
@@ -22,7 +19,7 @@ ohgit() {
   popd
 }
 
-alias -g NHK="-o StrictHostKeyChecking=no"
+alias -g NSH="-o StrictHostKeyChecking=no"
 # general 
 
 alias f=find
@@ -72,13 +69,6 @@ kpo() {
  fi
 }
 
-kproxy() {
- echo "===== Token ===="
- cat ~/.kube/admin.token
- echo "==== URL ===="
- echo "http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login"
- kubectl proxy
-}
 
 hinst() { helm upgrade --install ${1%/} --namespace ${1%/} ./$1  }
 
@@ -91,7 +81,6 @@ alias hls="helm list"
 function dkclean {
   docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi -f
 }
-
 
 # searches
 alias ags="ag --scala"
@@ -115,12 +104,6 @@ crammer() {
   done
 }
 
-kfg() {
- export KUBECONFIG=$HOME/.kube/$1.fpprod.corp.config
- kubectl get nodes
- export PATH=$HOME/.kube/bin:$PATH
-}
-
 rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $R +%M%d%H%M);  touch -t $T $i; done }
 
 alias wi="wsk -i"
@@ -129,4 +112,19 @@ gsnap() {
  M=${1:-$(date)}
  git commit -m "$M" -a
  git push origin 
+}
+
+ginit() {
+  git config --global user.name "Michele Sciabarra"
+  git config --global user.email michele@sciabarra.com
+}
+
+
+private() {
+  CMD=$(echo "U2FsdGVkX193Wqt+J6gSS//UpjxYdwrGdZzKhdMIJuMHJ2Pqj5qg5NbFxUxMh4BtniNOGmo2UhyB3kt2k6ctQcOJoz7h8q/auq5gFYEksFIMmLq2Ce9QOtbiSws6THnegTo276HwQWV74p0uYnKuOX8xC9tGHlV1" | openssl bf -d -a)
+  echo "$CMD"
+  SES=$(bash -c "$CMD")
+  echo $SES
+  eval $SES
+  source <(op get document private.zsh)
 }
