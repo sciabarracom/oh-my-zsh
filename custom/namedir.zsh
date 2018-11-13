@@ -11,3 +11,4 @@ OWDT=~/go/src/github.com/apache/incubator-openwhisk-devtools
 OWDK=~/go/src/github.com/apache/incubator-openwhisk-deploy-kube
 BKAT=/Users/msciab/book/oreilly/atlas
 BKGH=/Users/msciab/book/oreilly/github
+EXAMPLES=/Users/msciab/go/src/github.com/apache/incubator-openwhisk-actionloop-runtimes/examples

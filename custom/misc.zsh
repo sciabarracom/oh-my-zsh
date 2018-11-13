@@ -11,9 +11,6 @@ svd() {
    cd ~$f
 }
 
-here() {
-}
-
 ohgit() {
   pushd ~ZSH
   git commit -m "saved" -a
@@ -122,3 +119,7 @@ gsnap() {
  git commit -m "$M" -a
  git push origin 
 }
+
+export GHA=https://github.com/apache
+export GHS=https://github.com/sciabarracom
+export IOW=incubator-openwhisk

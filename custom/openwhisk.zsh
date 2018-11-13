@@ -13,8 +13,8 @@ alias wkv0="wsk activation list --limit 10"
 alias wkv1="wsk activation list --limit 1 | tail -1 | awk '{print \$1}'"
 
 function wkrun { 
-	ACTION=${WKRUN:-}$1
-	echo ">>>$ACTION WKRUN=$WKRUN"
+	ACTION=$1
+	echo ">>>$ACTION"
 	shift
 	ID=$(wkai $ACTION "$@" | awk '{print $6}')
 	sleep 1
@@ -47,3 +47,11 @@ wskminikube() {
   alias wsk="wsk -i"
 }
 
+
+wskloc() { 
+  unalias wsk
+  wsk property set --apihost 127.0.0.1:31001 -i 
+  wsk property set --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP --namespace guest
+  export WSK="wsk -i"
+  alias wsk="wsk -i"
+}
