@@ -121,7 +121,7 @@ ginit() {
 
 
 private() {
-  CMD=$(echo "U2FsdGVkX193Wqt+J6gSS//UpjxYdwrGdZzKhdMIJuMHJ2Pqj5qg5NbFxUxMh4BtniNOGmo2UhyB3kt2k6ctQcOJoz7h8q/auq5gFYEksFIMmLq2Ce9QOtbiSws6THnegTo276HwQWV74p0uYnKuOX8xC9tGHlV1" | openssl bf -d -a)
+  CMD=$(echo -e "U2FsdGVkX1/kHPFtCQtJDFlrVV5+SCVNfrSiR1epkGBscxY8q9pfngjRVDOcU0F3\nfiRt3D40fTJEQO7TIBkI2NEWmGy66tuMRHFPCONg7KCD/gEXx5lqLGj05hk05eee\nj1D4zuSBUbbjKaorpyQkqg==" | openssl enc -aes-256-cbc -d -a)
   echo "$CMD"
   SES=$(bash -c "$CMD")
   echo $SES

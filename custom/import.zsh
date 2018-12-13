@@ -15,19 +15,17 @@ if test -d ~/.nvm
 then source ~/.nvm/nvm.sh
 fi
 
-if test -d ~/Library/Python/2.7/bin
+if test -d ~/miniconda3
+then path+=~/miniconda3/bin
+elif test -d ~/Library/Python/2.7/bin
 then path+=~/Library/Python/2.7/bin
 fi
 
 if test -e /usr/local/Cellar/go/1.11.1
 then export GOROOT=/usr/local/Cellar/go/1.11.1
-fi
-
-if test -e /usr/lib/go-1.10
+elif test -e /usr/lib/go-1.10
 then export GOROOT=/usr/lib/go-1.10
-fi
-
-if test -e /usr/lib/go-1.11
+elif test -e /usr/lib/go-1.11
 then export GOROOT=/usr/lib/go-1.11
 fi
 
