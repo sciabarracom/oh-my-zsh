@@ -38,7 +38,7 @@ export GOPATH=~/go
 export PATH
 export ZSH_THEME=jovial
 
-if test -e ~/.nix-profile/etc 
-then source .nix-profile/etc/profile.d/nix.sh
+if test -e ~/.nix-profile/etc/profile.d/nix.sh
+then source ~/.nix-profile/etc/profile.d/nix.sh
 fi 
 
