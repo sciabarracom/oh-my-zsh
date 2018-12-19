@@ -61,6 +61,15 @@ else kubectl config set-context $(kubectl config current-context)  --namespace=$
 fi
 }
 
+kcfg() {
+  if test -z "$1"
+  then ls ~/.kube/
+  else export KUBECONFIG=~/.kube/$1
+       echo "KUBECONFIG=$KUBECONFIG"
+       kubectl get nodes
+  fi
+}
+
 kpo() {
  N=${2:-0}
  if test -z "$1"
