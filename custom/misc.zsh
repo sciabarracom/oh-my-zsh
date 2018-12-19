@@ -6,7 +6,7 @@ vz() {
 
 svd() {
    f=${1:?dirname}
-   echo "$f=$PWD" >>$ZSH/custom/namedir.zsh
+   echo "$f=\"$PWD\"" >>$ZSH/custom/namedir.zsh
    source $ZSH/custom/namedir.zsh
    cd ~$f
 }
@@ -19,7 +19,7 @@ ohgit() {
   popd
 }
 
-alias -g NHK="-o StrictHostKeyChecking=no"
+alias -g NSH="-o StrictHostKeyChecking=no"
 # general 
 
 alias f=find
@@ -61,13 +61,23 @@ else kubectl config set-context $(kubectl config current-context)  --namespace=$
 fi
 }
 
-kproxy() {
- echo "===== Token ===="
- cat ~/.kube/admin.token
- echo "==== URL ===="
- echo "http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login"
- kubectl proxy
+kcfg() {
+  if test -z "$1"
+  then ls ~/.kube/
+  else export KUBECONFIG=~/.kube/$1
+       echo "KUBECONFIG=$KUBECONFIG"
+       kubectl get nodes
+  fi
 }
+
+kpo() {
+ N=${2:-0}
+ if test -z "$1"
+ then kubectl get po --show-labels | {awk '{print $1 " : " $6}'}
+ else kubectl get po -o jsonpath="{.items[$N].metadata.name}" -l "$1"
+ fi
+}
+
 
 hinst() { helm upgrade --install ${1%/} --namespace ${1%/} ./$1  }
 
@@ -81,7 +91,6 @@ function dkclean {
   docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi -f
 }
 
-
 # searches
 alias ags="ag --scala"
 alias agj="ag --java"
@@ -89,7 +98,6 @@ alias agk="ag --kotlin"
 alias agg="ag --go"
 
 alias svi="sudo vi"
-alias alex="say -v Alex"
 alias eng="say -v Alex"
 
 export ANSIBLE_NOCOWS=1
@@ -102,12 +110,6 @@ crammer() {
   while read "line?cram> " 
   do eval ${line#$}
   done
-}
-
-kfg() {
- export KUBECONFIG=$HOME/.kube/$1.fpprod.corp.config
- kubectl get nodes
- export PATH=$HOME/.kube/bin:$PATH
 }
 
 rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $R +%M%d%H%M);  touch -t $T $i; done }
@@ -123,3 +125,18 @@ gsnap() {
 export GHA=https://github.com/apache
 export GHS=https://github.com/sciabarracom
 export IOW=incubator-openwhisk
+
+ginit() {
+  git config --global user.name "Michele Sciabarra"
+  git config --global user.email michele@sciabarra.com
+}
+
+
+private() {
+  CMD=$(echo -e "U2FsdGVkX1/kHPFtCQtJDFlrVV5+SCVNfrSiR1epkGBscxY8q9pfngjRVDOcU0F3\nfiRt3D40fTJEQO7TIBkI2NEWmGy66tuMRHFPCONg7KCD/gEXx5lqLGj05hk05eee\nj1D4zuSBUbbjKaorpyQkqg==" | openssl enc -aes-256-cbc -d -a)
+  echo "$CMD"
+  SES=$(bash -c "$CMD")
+  echo $SES
+  eval $SES
+  source <(op get document private.zsh)
+}
