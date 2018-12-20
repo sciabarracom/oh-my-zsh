@@ -43,6 +43,9 @@ alias dki="docker images"
 alias dkr="docker run -ti"
 alias dkc=docker-compose
 
+alias dkbash="docker run -ti --entrypoint=/bin/bash"
+alias dksh="docker run -ti --entrypoint=sh"
+
 alias kc=kubectl
 alias ks="kubectl --namespace kube-system"
 alias kg="kubectl get"
@@ -98,7 +101,6 @@ alias agk="ag --kotlin"
 alias agg="ag --go"
 
 alias svi="sudo vi"
-alias alex="say -v Alex"
 alias eng="say -v Alex"
 
 export ANSIBLE_NOCOWS=1
@@ -122,6 +124,10 @@ gsnap() {
  git commit -m "$M" -a
  git push origin 
 }
+
+export GHA=https://github.com/apache
+export GHS=https://github.com/sciabarracom
+export IOW=incubator-openwhisk
 
 ginit() {
   git config --global user.name "Michele Sciabarra"

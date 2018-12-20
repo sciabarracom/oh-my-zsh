@@ -22,7 +22,7 @@ then path+=~/Library/Python/2.7/bin
 fi
 
 if test -e /usr/local/Cellar/go/1.11.1
-then export GOROOT=/usr/local/Cellar/go/1.11.1
+then export GOROOT=/usr/local/Cellar/go/1.11.1/libexec
 elif test -e /usr/lib/go-1.10
 then export GOROOT=/usr/lib/go-1.10
 elif test -e /usr/lib/go-1.11
@@ -31,6 +31,10 @@ fi
 
 if test -d ~/.local/bin
 then path+=~/.local/bin
+fi
+
+if test -d ~/go/bin
+then path+=~/go/bin
 fi
 
 path=($GOROOT/bin $path)
