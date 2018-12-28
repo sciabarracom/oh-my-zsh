@@ -45,7 +45,7 @@ OGHS=https://github.com/sciabarracom/incubator-openwhisk
 OAGO=actionloop-golang-v1.11
 OAPY=actionloop-python
 
-wskloc() { 
+openwhisk_local() { 
   unalias wsk
   wsk property set --apihost 127.0.0.1:31001 -i 
   wsk property set --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP --namespace guest
