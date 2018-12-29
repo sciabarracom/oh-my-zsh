@@ -40,10 +40,10 @@ wsk_local() {
   alias wsk="wsk -i"
 }
 
-OGHA=https://github.com/apache/incubator-openwhisk
-OGHS=https://github.com/sciabarracom/incubator-openwhisk
-OAGO=actionloop-golang-v1.11
-OAPY=actionloop-python
+OGA=https://github.com/apache/incubator-openwhisk
+OGS=https://github.com/sciabarracom/incubator-openwhisk
+OGSA=actionloop-golang-v1.11
+OGAP=actionloop-python
 
 wskloc() { 
   unalias wsk
