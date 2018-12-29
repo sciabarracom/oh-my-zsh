@@ -18,13 +18,12 @@ else kubectl config set-context $(kubectl config current-context)  --namespace=$
 fi
 }
 
-kcfg() {
+kfg() {
   if test -z "$1"
-  then ls ~/.kube/
-  else export KUBECONFIG=~/.kube/$1
-       echo "KUBECONFIG=$KUBECONFIG"
-       kubectl get nodes
+  then ls ~/.kube/*.config 
+  else cp -f ~/.kube/${1%%.config}.config ~/.kube/config
   fi
+  kubectl get nodes
 }
 
 kpo() {
