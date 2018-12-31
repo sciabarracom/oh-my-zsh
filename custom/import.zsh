@@ -37,6 +37,10 @@ if test -d ~/go/bin
 then path+=~/go/bin
 fi
 
+if test -d ~/.cargo/bin
+then path+=~/.cargo/bin
+fi
+
 path=($GOROOT/bin $path)
 export GOPATH=~/go
 export PATH

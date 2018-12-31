@@ -20,6 +20,7 @@ ohgit() {
 }
 
 alias -g NSH="-o StrictHostKeyChecking=no"
+alias ssh="ssh -o StrictHostKeyChecking=no"
 # general 
 
 alias f=find
