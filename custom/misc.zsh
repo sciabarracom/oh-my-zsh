@@ -46,6 +46,7 @@ alias dkc=docker-compose
 
 alias dkbash="docker run -ti --entrypoint=/bin/bash"
 alias dksh="docker run -ti --entrypoint=sh"
+dksh="docker run -ti --entrypoint=sh"
 
 alias kc=kubectl
 alias ks="kubectl --namespace kube-system"
