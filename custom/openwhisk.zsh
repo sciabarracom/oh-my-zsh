@@ -33,11 +33,7 @@ wklast() { wkvl $(wkv1) }
 myip() { ifconfig | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | head -1 }
 
 wsk_local() { 
-  unalias wsk
-  wsk property set --apihost localhost:31001 
-  wsk property set --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP 
-  export WSK="wsk -i"
-  alias wsk="wsk -i"
+  wsk property set --apihost localhost:31001 --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP  --namespace guest
 }
 
 OGA=https://github.com/apache/incubator-openwhisk
@@ -52,3 +48,9 @@ wsk_local() {
   export WSK="wsk -i"
   alias wsk="wsk -i"
 }
+
+GAO=https://github.com/apache/incubator-openwhisk
+GSO=https://github.com/sciabarracom/incubator-openwhisk
+ALG=actionloop-golang-v1.11
+ALP=actionloop-python
+

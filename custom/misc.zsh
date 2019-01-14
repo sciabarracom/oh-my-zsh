@@ -20,7 +20,6 @@ ohgit() {
 }
 
 alias -g NSH="-o StrictHostKeyChecking=no"
-alias ssh="ssh -o StrictHostKeyChecking=no"
 # general 
 
 alias f=find
@@ -38,13 +37,7 @@ alias a7="awk '{print \$7}'"
 alias a8="awk '{print \$8}'"
 alias a9="awk '{print \$9}'"
 
-# docker 
-alias dk=docker
-alias dki="docker images"
-alias dkr="docker run -ti"
-alias dkc=docker-compose
-
-alias dkbash="docker run -ti --entrypoint=/bin/bash"
+dkbash="docker run -ti --entrypoint=/bin/bash"
 alias dksh="docker run -ti --entrypoint=sh"
 dksh="docker run -ti --entrypoint=sh"
 
@@ -142,5 +135,7 @@ private() {
   SES=$(bash -c "$CMD")
   echo $SES
   eval $SES
-  source <(op get document private.zsh)
+  echo "op configured"
 }
+
+flushdns() { sudo killall -HUP mDNSResponder }
