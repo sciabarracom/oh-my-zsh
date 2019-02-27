@@ -20,6 +20,7 @@ ohgit() {
 }
 
 alias -g NSH="-o StrictHostKeyChecking=no"
+alias ssh="ssh -o StrictHostKeyChecking=no"
 # general 
 
 alias f=find
@@ -66,6 +67,14 @@ kfg() {
   fi
   kubectl get nodes
 }
+
+wfg() {
+ if test -z "$1"
+ then ls ~/.kube/*.wsk
+ else cp ~/.kube/${1%%.wsk}.wsk ~/.wskprops
+ fi
+}
+
 
 kpo() {
  N=${2:-0}
@@ -139,3 +148,4 @@ private() {
 }
 
 flushdns() { sudo killall -HUP mDNSResponder }
+alias agn="ag --nogroup"

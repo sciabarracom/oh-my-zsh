@@ -32,16 +32,14 @@ wklast() { wkvl $(wkv1) }
 
 myip() { ifconfig | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | head -1 }
 
+WSK_STD=23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP
+
 wsk_local() { 
-  wsk property set --apihost localhost:31001 --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP  --namespace guest
+  wsk -i property set --apihost localhost:31001 --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP  --namespace guest
 }
 
-wsk_orion() { 
-  wsk property set --apihost orion.sciabarra.com:443 --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP  --namespace guest
-}
-
-GAO=https://github.com/apache/incubator-openwhisk
-GSO=https://github.com/sciabarracom/incubator-openwhisk
+GAIO=https://github.com/apache/incubator-openwhisk
+GSIO=https://github.com/sciabarracom/incubator-openwhisk
 ALG=actionloop-golang-v1.11
 ALP=actionloop-python
 

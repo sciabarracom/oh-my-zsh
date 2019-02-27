@@ -1,3 +1,8 @@
+W=~/Work
+H=~W/Hack
+N=~W/Nimbella
+NB=~/go/src/github.com/nimbella-corp/bowl
+NK=~/go/src/github.com/nimbella-corp/kube
 CO=~/Dropbox/Work/Common
 COSH=~/Dropbox/Work/Common/Share
 DO=~/Work/DevOps
@@ -16,3 +21,4 @@ OWDK=~/go/src/github.com/apache/incubator-openwhisk-deploy-kube
 CODE="/Users/michelesciabarra/Library/Application Support/Code/User"
 TLAS=~/Work/Telmore/2016/agilesites-telmore-ng
 TLMI=~/Work/Telmore/2018/oldcms-migrator/vagrant
+SC=/Users/michelesciabarra/Work/SciabarraCloud
