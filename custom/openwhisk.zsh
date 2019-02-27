@@ -34,8 +34,13 @@ myip() { ifconfig | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | he
 
 WSK_STD=23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP
 
+
 wsk_local() { 
-  wsk -i property set --apihost localhost:31001 --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP  --namespace guest
+  unalias wsk
+  wsk property set --apihost 127.0.0.1:31001 -i 
+  wsk property set --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP --namespace guest
+  export WSK="wsk -i"
+  alias wsk="wsk -i"
 }
 
 GAIO=https://github.com/apache/incubator-openwhisk
