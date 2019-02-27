@@ -139,3 +139,4 @@ private() {
 }
 
 flushdns() { sudo killall -HUP mDNSResponder }
+export HOMEBREW_GITHUB_API_TOKEN=6d67e5f685518dd83ec656eb1a295dd08bcd84c9
