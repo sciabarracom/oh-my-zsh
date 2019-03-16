@@ -22,3 +22,5 @@ CODE="/Users/michelesciabarra/Library/Application Support/Code/User"
 TLAS=~/Work/Telmore/2016/agilesites-telmore-ng
 TLMI=~/Work/Telmore/2018/oldcms-migrator/vagrant
 SC=/Users/michelesciabarra/Work/SciabarraCloud
+DT="/Users/msciab/Work/Mirella/DroneTrainer"
+ETF="/Users/msciab/Work/Data/etf"
