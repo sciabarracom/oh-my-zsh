@@ -1,3 +1,4 @@
+
 vz() {
   f=$ZSH/custom/${1:-misc}.zsh
   vi $f
@@ -149,3 +150,4 @@ private() {
 
 flushdns() { sudo killall -HUP mDNSResponder }
 alias agn="ag --nogroup"
+
