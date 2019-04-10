@@ -26,5 +26,5 @@ FUN="/Users/michelesciabarra/Work/DevOps/fun"
 NI=~/go/src/github.com/nimbella-corp
 NIMA=~/go/src/github.com/nimbella-corp/main
 NIBO=~/go/src/github.com/nimbella-corp/bowl
-DT="/Users/msciab/Work/Mirella/DroneTrainer"
+DT="/Users/msciab/Work/Data/DroneTrainer"
 ETF="~W/Data/etf"
