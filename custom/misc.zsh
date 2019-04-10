@@ -1,4 +1,3 @@
-
 vz() {
   f=$ZSH/custom/${1:-misc}.zsh
   vi $f
@@ -20,14 +19,12 @@ ohgit() {
   popd
 }
 
-alias -g NSH="-o StrictHostKeyChecking=no"
-alias ssh="ssh -o StrictHostKeyChecking=no"
+alias -g NSH="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 # general 
 
 alias f=find
 alias s=source
 alias m=make
-
 
 alias a1="awk '{print \$1}'"
 alias a2="awk '{print \$2}'"
@@ -150,5 +147,5 @@ private() {
 
 flushdns() { sudo killall -HUP mDNSResponder }
 export HOMEBREW_GITHUB_API_TOKEN=6d67e5f685518dd83ec656eb1a295dd08bcd84c9
-alias agn="ag --nogroup"
+alias s="ag --nogroup"
 
