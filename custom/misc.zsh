@@ -60,8 +60,13 @@ fi
 
 kfg() {
   if test -z "$1"
-  then ls ~/.kube/*.config 
-  else cp -f ~/.kube/${1%%.config}.config ~/.kube/config
+  then ls -1 ~/.kube/*.config 
+  else TGT=~/.kube/${1%%.config}.config 
+       if test -e $TGT
+       then cp $TGT ~/.kube/config
+       else echo saved config to $TGT 
+            cp ~/.kube/config $TGT
+       fi
   fi
   kubectl get nodes
 }

@@ -1,8 +1,7 @@
 W=~/Work
 NC=~/Work/Neuronix
-BOW=~/go/src/github.com/nimbella-corp/bowl
-NIM=~/go/src/github.com/nimbella-corp/main
-NMM=~/go/src/github.com/nimbella-corp/main-master
+BOW=/Users/michelesciabarra/Work/Nimbella/bowl
+BOW1=/Users/michelesciabarra/go/src/github.com/nimbella-corp/bowl
 CO=~/Dropbox/Work/Common
 COSH=~/Dropbox/Work/Common/Share
 DO=~/Work/DevOps
