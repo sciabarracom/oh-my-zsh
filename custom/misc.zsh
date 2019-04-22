@@ -19,12 +19,8 @@ ohgit() {
   popd
 }
 
-alias -g NSH="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+alias -g nsh="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 # general 
-
-alias f=find
-alias s=source
-alias m=make
 
 alias a1="awk '{print \$1}'"
 alias a2="awk '{print \$2}'"
@@ -78,7 +74,6 @@ wfg() {
  fi
 }
 
-
 kpo() {
  N=${2:-0}
  if test -z "$1"
@@ -131,9 +126,6 @@ gsnap() {
  git push origin 
 }
 
-export GHA=https://github.com/apache
-export GHS=https://github.com/sciabarracom
-export IOW=incubator-openwhisk
 
 ginit() {
   git config --global user.name "Michele Sciabarra"
@@ -151,6 +143,8 @@ private() {
 }
 
 flushdns() { sudo killall -HUP mDNSResponder }
+
 export HOMEBREW_GITHUB_API_TOKEN=6d67e5f685518dd83ec656eb1a295dd08bcd84c9
+
 alias s="ag --nogroup"
 
