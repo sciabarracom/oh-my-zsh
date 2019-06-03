@@ -7,5 +7,19 @@
     { "key": "alt+enter",
       "command": "multiCommand.execToEol",
       "when": "editorTextFocus" 
+    },
+    {
+      "key": "ctrl+shift+enter",
+      "command": "language-julia.executeJuliaBlockInREPL",
+      "when": "editorTextFocus && !editorHasSelection && editorLangId == 'julia'"
+    },
+    {
+      "key": "alt+enter",
+      "command": "-language-julia.executeJuliaBlockInREPL",
+      "when": "editorTextFocus && !editorHasSelection && editorLangId == 'julia'"
+    },
+    {
+      "key": "ctrl+\\",
+      "command": "unicode-latex.insertMathSymbol"
     }
 ]

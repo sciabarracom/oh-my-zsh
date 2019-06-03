@@ -36,7 +36,9 @@ dkbash="docker run -ti --entrypoint=/bin/bash"
 alias dksh="docker run -ti --entrypoint=sh"
 dksh="docker run -ti --entrypoint=sh"
 
+alias wkc="watch kubectl"
 alias kc=kubectl
+alias kow="kubectl -n openwhisk"
 alias ks="kubectl --namespace kube-system"
 alias kg="kubectl get"
 kpo() { kc get po | awk  "/$1/ { print \"\"\$1}" | tail -1 }
@@ -52,26 +54,6 @@ then  kubectl config get-contexts
       kubectl get ns
 else kubectl config set-context $(kubectl config current-context)  --namespace=$1 
 fi
-}
-
-kfg() {
-  if test -z "$1"
-  then ls -1 ~/.kube/*.config 
-  else TGT=~/.kube/${1%%.config}.config 
-       if test -e $TGT
-       then cp $TGT ~/.kube/config
-       else echo saved config to $TGT 
-            cp ~/.kube/config $TGT
-       fi
-  fi
-  kubectl get nodes
-}
-
-wfg() {
- if test -z "$1"
- then ls ~/.kube/*.wsk
- else cp ~/.kube/${1%%.wsk}.wsk ~/.wskprops
- fi
 }
 
 kpo() {

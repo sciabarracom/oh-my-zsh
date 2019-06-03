@@ -2,10 +2,9 @@
     "editor.fontSize": 12,
     "git.autofetch": true,
     "extensions.ignoreRecommendations": true,
-    "go.testTimeout": "30s",
     "terminal.integrated.commandsToSkipShell": [],
     "terminal.integrated.rendererType": "dom",
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 3,
     "files.associations": {
         "*.asc": "asciidoc"
     },
@@ -24,5 +23,16 @@
         ]
     }
 ],
-"go.inferGopath": true
+"go.testTimeout": "30s",
+"go.testFlags": [
+    "-count=1",
+    "-v"
+],
+//"go.gopath": "/Users/michelesciabarra/go",
+"python.dataScience.sendSelectionToInteractiveWindow": true,
+"workbench.statusBar.feedback.visible": false,
+"workbench.colorTheme": "Base16 Dark Shapeshifter",
+"javascript.updateImportsOnFileMove.enabled": "always",
+//"go.useLanguageServer": true,
+"julia.enableTelemetry": true
 }
