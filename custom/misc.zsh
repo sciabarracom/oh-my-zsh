@@ -38,8 +38,9 @@ dksh="docker run -ti --entrypoint=sh"
 
 alias wkc="watch kubectl"
 alias kc=kubectl
-alias kow="kubectl -n openwhisk"
-alias ks="kubectl --namespace kube-system"
+alias kco="kubectl -n openwhisk"
+alias kcd="kubectl -n default"
+alias kcs="kubectl -n kube-system"
 alias kg="kubectl get"
 kpo() { kc get po | awk  "/$1/ { print \"\"\$1}" | tail -1 }
 
@@ -129,4 +130,4 @@ flushdns() { sudo killall -HUP mDNSResponder }
 export HOMEBREW_GITHUB_API_TOKEN=6d67e5f685518dd83ec656eb1a295dd08bcd84c9
 
 alias s="ag --nogroup"
-
+alias addbin="export $PATH=$PWD/bin:$PATH"
