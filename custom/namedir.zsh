@@ -25,4 +25,4 @@ NIB="/Users/michelesciabarra/go/src/github.com/nimbella-corp/bowl"
 NOT="/Users/michelesciabarra/Dropbox/Work/Common/note"
 KP="/Users/michelesciabarra/Work/DevOps/kubepass"
 NCS="/Users/michelesciabarra/Work/Neuronix/solver"
-OWK="/Users/michelesciabarra/Work/Neuronix/openwhisk-knative-operator"
+OWK=~/Work/Neuronix/openwhisk-knative-operator
