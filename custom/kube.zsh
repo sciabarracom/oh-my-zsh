@@ -1,6 +1,7 @@
 alias ko="kubectl -n openwhisk"
 alias kd="kubectl -n default"
 alias ks="kubectl -n kube-system"
+alias kw="kubectl -n knative-whisk"
 
 kfg() {
   if test -z "$1"
