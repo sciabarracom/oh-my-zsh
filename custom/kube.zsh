@@ -3,6 +3,8 @@ alias kd="kubectl -n default"
 alias ks="kubectl -n kube-system"
 alias kw="kubectl -n knative-whisk"
 
+alias wski="WSK_CONFIG_FILE=$HOME/.wskprops.ibm wsk"
+
 kfg() {
   if test -z "$1"
   then ls -1 ~/.kube/*.config
