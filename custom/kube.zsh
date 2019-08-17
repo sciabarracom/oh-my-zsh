@@ -3,7 +3,19 @@ alias kd="kubectl -n default"
 alias ks="kubectl -n kube-system"
 alias kw="kubectl -n knative-whisk"
 
-alias wski="WSK_CONFIG_FILE=$HOME/.wskprops.ibm wsk"
+function kk {
+  if test -z "$KN"
+  then echo unset KN=namespace 
+  elif test -z "$KC"
+  then echo  unset KC=config 
+  else kubectl -n $KN --kubeconfig ~/.kube/config.$KC "$@"
+  fi
+}
+
+alias iwsk="WSK_CONFIG_FILE=$HOME/.wskprops.ibm wsk"
+
+alias kwsk="wsk --apihost http://192.168.64.18:30808 -u 123:456"
+alias lwsk="wsk --apihost http://127.0.0.1:8080 -u 123:456"
 
 kfg() {
   if test -z "$1"
