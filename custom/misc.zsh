@@ -104,7 +104,10 @@ rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $
 alias wi="wsk -i"
 
 gsnap() {
- M=${1:-$(date)}
+ if test -z "$1"
+ then M="$(date)"
+ else M="$@"
+ fi
  git commit -m "$M" -a
  git push origin 
 }
@@ -132,3 +135,7 @@ export HOMEBREW_GITHUB_API_TOKEN=6d67e5f685518dd83ec656eb1a295dd08bcd84c9
 alias s="ag --nogroup"
 export NOTES_CLI_HOME=~/.oh-my-zsh/notes-cli
 
+export LN0=192.168.0
+alias na=nimadmin
+alias p3=python3
+alias blender=/Applications/Blender.app/Contents/MacOS/Blender
