@@ -19,7 +19,7 @@ ohgit() {
   popd
 }
 
-alias -g nsh="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+alias -g NSH="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 # general 
 
 alias a1="awk '{print \$1}'"
@@ -136,6 +136,8 @@ alias s="ag --nogroup"
 export NOTES_CLI_HOME=~/.oh-my-zsh/notes-cli
 
 export LN0=192.168.0
-alias na=nimadmin
 alias p3=python3
 alias blender=/Applications/Blender.app/Contents/MacOS/Blender
+alias na=nimadmin
+PATH=$PATH:~/Work/Nimbella/openwhisk-utilities/scancode:~/Work/PagoPA/io-sdk/bin
+
