@@ -1,4 +1,3 @@
-export GOPATH=~/go
 export ZSH_THEME=jovial
 path=(~/bin /usr/local/bin $path)
 export PATH
@@ -20,12 +19,20 @@ if test -d ~/Library/Python/2.7/bin
 then path+=~/Library/Python/2.7/bin
 fi
 
-GODIRS=(/usr/local/Cellar/go/*/libexec /usr/lib/go-*)
-if test -n "${GODIRS[1]}"
-then export GOROOT="${GODIRS[1]}"
-else echo "No Valid GOROOT"
+for GOROOT in \
+   /usr/local/Cellar/go/*/libexec \
+   /usr/local/Cellar/go@*/*/libexec \
+   /usr/lib/go-*
+do if test -d $GOROOT 
+   then break
+   fi
+done
+if test -d $GOROOT
+then export GOROOT
+     export GOPATH=~/go
+     path=($GOROOT/bin $path)
+else echo "No valid GOROOT" 
 fi
-path=($GOROOT/bin $path)
 
 if test -d ~/.local/bin
 then path+=~/.local/bin
