@@ -139,5 +139,25 @@ export LN0=192.168.0
 alias p3=python3
 alias blender=/Applications/Blender.app/Contents/MacOS/Blender
 alias na=nimadmin
-PATH=$PATH:~/Work/Nimbella/openwhisk-utilities/scancode:~/Work/PagoPA/io-sdk/bin
+PATH=$PATH:~/Work/Nimbella/openwhisk-utilities/scancode:~/Work/PagoPA/io-sdk
 
+nocors() {
+open -a Chromium --args --disable-web-security --user-data-dir=/tmp
+}
+
+podbynode() {
+ kubectl $* get po -o json | jq -r '.items[] | "\(.spec.nodeName): \(.metadata.name)"' | sort
+}
+
+
+codiff() {
+  while read line
+  do code -w -d $line $1/$line
+  done
+}
+
+omerge() {
+  while read line
+  do opendiff $line $1/$line -merge $1/$line
+  done
+}
