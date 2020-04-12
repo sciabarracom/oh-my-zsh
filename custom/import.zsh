@@ -22,8 +22,8 @@ fi
 
 if test -e /usr/local/Cellar/go/1.12.5
 then export GOROOT=/usr/local/Cellar/go/1.12.5/libexec
-elif test -e /usr/lib/go-1.10
-then export GOROOT=/usr/lib/go-1.10
+elif test -e /usr/lib/go-1.12
+then export GOROOT=/usr/lib/go-1.12
 elif test -e /usr/lib/go-1.11
 then export GOROOT=/usr/lib/go-1.11
 else echo "No Valid GOROOT"
