@@ -19,7 +19,7 @@ ohgit() {
   popd
 }
 
-alias -g nsh="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+alias -g NSH="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 # general 
 
 alias a1="awk '{print \$1}'"
@@ -104,7 +104,10 @@ rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $
 alias wi="wsk -i"
 
 gsnap() {
- M=${1:-$(date)}
+ if test -z "$1"
+ then M="$(date)"
+ else M="$@"
+ fi
  git commit -m "$M" -a
  git push origin 
 }
@@ -132,3 +135,29 @@ export HOMEBREW_GITHUB_API_TOKEN=6d67e5f685518dd83ec656eb1a295dd08bcd84c9
 alias s="ag --nogroup"
 export NOTES_CLI_HOME=~/.oh-my-zsh/notes-cli
 
+export LN0=192.168.0
+alias p3=python3
+alias blender=/Applications/Blender.app/Contents/MacOS/Blender
+alias na=nimadmin
+PATH=$PATH:~/Work/Nimbella/openwhisk-utilities/scancode:~/Work/PagoPA/io-sdk
+
+nocors() {
+open -a Chromium --args --disable-web-security --user-data-dir=/tmp
+}
+
+podbynode() {
+ kubectl $* get po -o json | jq -r '.items[] | "\(.spec.nodeName): \(.metadata.name)"' | sort
+}
+
+
+codiff() {
+  while read line
+  do code -w -d $line $1/$line
+  done
+}
+
+omerge() {
+  while read line
+  do opendiff $line $1/$line -merge $1/$line
+  done
+}

@@ -3,6 +3,18 @@ alias kd="kubectl -n default"
 alias ks="kubectl -n kube-system"
 alias kw="kubectl -n knative-whisk"
 
+function kk {
+  if test -z "$KN"
+  then echo unset KN=namespace 
+  elif test -z "$KC"
+  then echo  unset KC=config 
+  else kubectl -n $KN --kubeconfig ~/.kube/config.$KC "$@"
+  fi
+}
+
+alias iwsk="WSK_CONFIG_FILE=$HOME/.wskprops.ibm wsk"
+
+
 kfg() {
   if test -z "$1"
   then ls -1 ~/.kube/*.config
