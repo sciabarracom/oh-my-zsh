@@ -32,16 +32,13 @@ alias a7="awk '{print \$7}'"
 alias a8="awk '{print \$8}'"
 alias a9="awk '{print \$9}'"
 
-dkbash="docker run -ti --entrypoint=/bin/bash"
 alias dksh="docker run -ti --entrypoint=sh"
-dksh="docker run -ti --entrypoint=sh"
 
-alias wkc="watch kubectl"
 alias kc=kubectl
-alias kco="kubectl -n openwhisk"
-alias kcd="kubectl -n default"
-alias kcs="kubectl -n kube-system"
-alias kg="kubectl get"
+alias ko="kubectl -n openwhisk"
+alias kd="kubectl -n default"
+alias ks="kubectl -n kube-system"
+
 kpo() { kc get po | awk  "/$1/ { print \"\"\$1}" | tail -1 }
 
 krun() {
@@ -138,11 +135,11 @@ export NOTES_CLI_HOME=~/.oh-my-zsh/notes-cli
 export LN0=192.168.0
 alias p3=python3
 alias blender=/Applications/Blender.app/Contents/MacOS/Blender
-alias na=nimadmin
+
 PATH=$PATH:~/Work/Nimbella/openwhisk-utilities/scancode:~/Work/PagoPA/io-sdk
 
 nocors() {
-open -a Chromium --args --disable-web-security --user-data-dir=/tmp
+  open -a Chromium --args --disable-web-security --user-data-dir=/tmp
 }
 
 podbynode() {
@@ -160,4 +157,9 @@ omerge() {
   while read line
   do opendiff $line $1/$line -merge $1/$line
   done
+}
+
+na() {
+  cd "$HOME/Work/Nimbella/main"
+  bin/nimadmin "$@"
 }
