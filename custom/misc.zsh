@@ -39,14 +39,14 @@ alias ko="kubectl -n openwhisk"
 alias kd="kubectl -n default"
 alias ks="kubectl -n kube-system"
 
-kpo() { kc get po | awk  "/$1/ { print \"\"\$1}" | tail -1 }
+kpod() { kc get po | awk  "/$1/ { print \"\"\$1}" | tail -1 }
 
 krun() {
  kubectl run ${1/[\/:]/-} -ti --rm --image=$1 --restart=Never --command ${2:-/bin/sh}
 }
 
 
-kcns() { 
+kns() { 
 if test -z "$1"
 then  kubectl config get-contexts  
       kubectl get ns
@@ -62,12 +62,6 @@ kpo() {
  fi
 }
 
-
-hinst() { helm upgrade --install ${1%/} --namespace ${1%/} ./$1  }
-
-hpurge() { helm delete ${1%/} --purge  }
-
-hdebug() { helm upgrade --install ${1%/} --namespace $1 ./$1 --dry-run --debug  }
 
 alias hls="helm list"
 
@@ -89,16 +83,6 @@ alias ans=ansible-playbook
 anst() { ansible-playbook -t untagged,$1 $argv[2,-1] }
 ansc() { ansible -mcommand -a$1 $argv[2,-1] all }
 
-crammer() {
-  export T=$PWD
-  while read "line?cram> " 
-  do eval ${line#$}
-  done
-}
-
-rndtime() { for i in *.* ; do R=$RANDOM ; R=$(expr 1000000 + $R) ; T=$(date -r $R +%M%d%H%M);  touch -t $T $i; done }
-
-alias wi="wsk -i"
 
 gsnap() {
  if test -z "$1"
@@ -116,27 +100,7 @@ ginit() {
 }
 
 
-private() {
-  CMD=$(echo -e "U2FsdGVkX1/kHPFtCQtJDFlrVV5+SCVNfrSiR1epkGBscxY8q9pfngjRVDOcU0F3\nfiRt3D40fTJEQO7TIBkI2NEWmGy66tuMRHFPCONg7KCD/gEXx5lqLGj05hk05eee\nj1D4zuSBUbbjKaorpyQkqg==" | openssl enc -aes-256-cbc -d -a)
-  echo "$CMD"
-  SES=$(bash -c "$CMD")
-  echo $SES
-  eval $SES
-  echo "op configured"
-}
-
 flushdns() { sudo killall -HUP mDNSResponder }
-
-export HOMEBREW_GITHUB_API_TOKEN=6d67e5f685518dd83ec656eb1a295dd08bcd84c9
-
-alias s="ag --nogroup"
-export NOTES_CLI_HOME=~/.oh-my-zsh/notes-cli
-
-export LN0=192.168.0
-alias p3=python3
-alias blender=/Applications/Blender.app/Contents/MacOS/Blender
-
-PATH=$PATH:~/Work/Nimbella/openwhisk-utilities/scancode:~/Work/PagoPA/io-sdk
 
 nocors() {
   open -a Chromium --args --disable-web-security --user-data-dir=/tmp

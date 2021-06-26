@@ -1,5 +1,23 @@
 # customised version
 
+envs() {
+export NODENV_ROOT="$HOME/.nodenv"
+export GOENV_ROOT="$HOME/.goenv"
+export PYENV_ROOT="$HOME/.pyenv"
+
+if ! test -d $GOENV_ROOT
+then git clone https://github.com/syndbg/goenv.git $GOENV_ROOT
+fi
+if ! test -e $NODENV_ROOT
+then git clone https://github.com/nodenv/nodenv.git $NODENV_ROOT
+     mkdir "$NODENV_ROOT/plugins"
+     git clone https://github.com/nodenv/node-build.git "$NODENV_ROOT"/plugins/node-build
+fi
+if ! test -e $PYENV_ROOT
+then git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT
+fi
+}
+
 main() {
   # Use colors, but only if connected to a terminal, and that terminal
   # supports them.
@@ -97,5 +115,5 @@ main() {
   printf "${NORMAL}"
   env zsh
 }
-
 main
+envs
