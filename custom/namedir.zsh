@@ -1,12 +1,7 @@
-GHA=https://github.com/sciabarracom@apache
-GHS=https://github.com/sciabarracom@sciabarracom
-GHN=https://github.com/neuronix-cloud@neuronix-cloud
-IOW=incubator-openwhisk
 W=~/Work
 NI=~/Work/Nimbella
 NC=~/Work/Neuronix
 SC=~/Work/SciabarraCom
-BK=~/Work/Book/learning-openwhisk
 COSH=~/Dropbox/Work/Common/Share
 OWRG=~/go/src/github.com/apache/incubator-openwhisk-runtime-go
 OWRA=~/go/src/github.com/apache/incubator-openwhisk-runtime-actionloop
