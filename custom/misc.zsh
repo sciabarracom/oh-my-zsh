@@ -1,3 +1,4 @@
+H=$HOME
 vz() {
   f=$ZSH/custom/${1:-misc}.zsh
   vi $f
@@ -127,3 +128,4 @@ na() {
   cd "$HOME/Work/Nimbella/main"
   bin/nimadmin "$@"
 }
+source $HOME/.ssh/secret.sh
