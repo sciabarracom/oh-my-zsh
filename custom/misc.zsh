@@ -128,7 +128,6 @@ na() {
   cd "$HOME/Work/Nimbella/main"
   bin/nimadmin "$@"
 }
-<<<<<<< HEAD
 
 #alias sec="source ~/.ssh/secret.sh"
 if test -d $HOME/.ssh/secret.sh
