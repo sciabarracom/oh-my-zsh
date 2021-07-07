@@ -1,12 +1,7 @@
-GHA=https://github.com/sciabarracom@apache
-GHS=https://github.com/sciabarracom@sciabarracom
-GHN=https://github.com/neuronix-cloud@neuronix-cloud
-IOW=incubator-openwhisk
 W=~/Work
 NI=~/Work/Nimbella
 NC=~/Work/Neuronix
 SC=~/Work/SciabarraCom
-BK=~/Work/Book/learning-openwhisk
 COSH=~/Dropbox/Work/Common/Share
 OWRG=~/go/src/github.com/apache/incubator-openwhisk-runtime-go
 OWRA=~/go/src/github.com/apache/incubator-openwhisk-runtime-actionloop
@@ -19,3 +14,4 @@ NDM="/Users/msciab/Work/Butterfly/nimbella-crud-demo"
 FAW="/Users/msciab/Work/Butterfly/faaswars"
 NIB="/Users/msciab/Work/Nimbella/nimbuilder"
 NAW="/Users/msciab/Work/SciabarraCom/neroni-aws/aws"
+OB="/Users/msciab/Work/openwhisk-blog"
