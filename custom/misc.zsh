@@ -33,6 +33,9 @@ alias a8="awk '{print \$8}'"
 alias a9="awk '{print \$9}'"
 
 alias dksh="docker run -ti --entrypoint=sh"
+function dkclean {
+  docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi -f
+}
 
 alias kc=kubectl
 alias ko="kubectl -n openwhisk"
@@ -47,11 +50,11 @@ krun() {
 
 
 kcns() { 
-if test -z "$1"
-then  kubectl config get-contexts  
-      kubectl get ns
-else kubectl config set-context $(kubectl config current-context)  --namespace=$1 
-fi
+  if test -z "$1"
+  then  kubectl config get-contexts  
+        kubectl get ns
+  else kubectl config set-context $(kubectl config current-context)  --namespace=$1 
+  fi
 }
 
 kpo() {
@@ -71,9 +74,6 @@ hdebug() { helm upgrade --install ${1%/} --namespace $1 ./$1 --dry-run --debug  
 
 alias hls="helm list"
 
-function dkclean {
-  docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi -f
-}
 
 # searches
 alias ags="ag --scala"
@@ -163,3 +163,22 @@ na() {
   cd "$HOME/Work/Nimbella/main"
   bin/nimadmin "$@"
 }
+
+#alias sec="source ~/.ssh/secret.sh"
+if test -d $HOME/.ssh/secret.sh
+then source ~/.ssh/secret.sh
+fi
+
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
+
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin" 

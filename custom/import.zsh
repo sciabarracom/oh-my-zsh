@@ -20,9 +20,7 @@ then path+=~/Library/Python/2.7/bin
 fi
 
 for GOROOT in \
-   /usr/local/Cellar/go/*/libexec \
-   /usr/local/Cellar/go@*/*/libexec \
-   /usr/lib/go-*
+   /usr/local/Cellar/go/*/libexec 
 do if test -d $GOROOT 
    then break
    fi

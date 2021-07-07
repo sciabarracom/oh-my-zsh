@@ -17,3 +17,5 @@ NIM=~/Work/Nimbella/main
 HCK="/Users/msciab/Work/Hack"
 NDM="/Users/msciab/Work/Butterfly/nimbella-crud-demo"
 FAW="/Users/msciab/Work/Butterfly/faaswars"
+NIB="/Users/msciab/Work/Nimbella/nimbuilder"
+NAW="/Users/msciab/Work/SciabarraCom/neroni-aws/aws"
