@@ -129,6 +129,7 @@ na() {
   bin/nimadmin "$@"
 }
 
+
 #alias sec="source ~/.ssh/secret.sh"
 if test -d $HOME/.ssh/secret.sh
 then source ~/.ssh/secret.sh
@@ -139,8 +140,8 @@ eval "$(nodenv init -)"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
